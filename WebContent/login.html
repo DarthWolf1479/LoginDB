@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>login web...</title>
+
+<script type="text/javascript" languaje="JavaScript">
+function carga() {
+	document.getElementById("usuario").focus();
+}
+
+function valideDatos() {
+	var usuario = document.getElementById("usuario");
+	var password = document.getElementById("password");
+	if((usuario.value == "" || usuario.value == '' || usuario.value == null)&&
+			(password.value == "" || password.value == '' || password.value == null)){
+		alert("Ingresa tu usuario y tu password");
+		usuario.focus();
+		return false;
+	}else if(usuario.value == "" || usuario.value == '' || usuario.value == null){
+		alert("Ingresa tu usuario");
+		usuario.focus();
+		return false;
+	}else if(password.value == "" || password.value == '' || password.value == null){
+		alert("Ingresa tu password");
+		password.focus();
+		return false;
+	}else{
+		return true;
+	}
+}
+</script>
+
+</head>
+<body onload="carga();">
+
+<form action="loginWeb.jr" method="POST" onsubmit="return valideDatos();">
+<table align="center">
+<tr>
+<td colspan="2" style="font-weight: bold; size: 20px;">Ingresa tu usuario y contraseña</td>
+</tr>
+<tr>
+<td style="font-weight: bold; size: 12px; color: blue">Usuario : </td>
+<td><input type="text" name="usuario" id="usuario"></td>
+</tr>
+<tr>
+<td style="font-weight: bold; size: 12px; color: blue">Password : </td>
+<td><input type="password" name="password" id="password"></td>
+</tr>
+<tr>
+<td><input type="button" value="Cancelar" style="font-weight: bold; size: 14px; color: blue"></td>
+<td><input type="submit" value="Aceptar" style="font-weight: bold; size: 14px; color: blue"></td>
+</tr>
+</table>
+
+</body>
+</html>
